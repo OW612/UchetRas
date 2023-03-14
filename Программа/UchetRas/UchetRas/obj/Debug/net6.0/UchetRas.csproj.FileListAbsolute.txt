@@ -1,0 +1,15 @@
+E:\Практика 02022023\Программа\UchetRas\UchetRas\bin\Debug\net6.0\UchetRas.exe
+E:\Практика 02022023\Программа\UchetRas\UchetRas\bin\Debug\net6.0\UchetRas.deps.json
+E:\Практика 02022023\Программа\UchetRas\UchetRas\bin\Debug\net6.0\UchetRas.runtimeconfig.json
+E:\Практика 02022023\Программа\UchetRas\UchetRas\bin\Debug\net6.0\UchetRas.dll
+E:\Практика 02022023\Программа\UchetRas\UchetRas\bin\Debug\net6.0\UchetRas.pdb
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.csproj.AssemblyReference.cache
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.GeneratedMSBuildEditorConfig.editorconfig
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.AssemblyInfoInputs.cache
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.AssemblyInfo.cs
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.csproj.CoreCompileInputs.cache
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.dll
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\refint\UchetRas.dll
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.pdb
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\UchetRas.genruntimeconfig.cache
+E:\Практика 02022023\Программа\UchetRas\UchetRas\obj\Debug\net6.0\ref\UchetRas.dll

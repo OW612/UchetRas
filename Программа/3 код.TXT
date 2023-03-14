@@ -1,0 +1,226 @@
+using System;
+using System.Data;
+using System.Diagnostics;
+using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
+using System.Security.Cryptography;
+using System.Threading.Channels;
+using static System.Collections.Specialized.BitVector32;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace MyProgram
+{
+    class Departaments//Класс отделов
+    {
+        public string NameDepartament;//Название отдела
+        public int KolvoSotrudnikov;//Количество сотрулников
+
+        public void NDep()//определение отдела
+        {
+            ConsoleKeyInfo depart;//переменная для выбора отдела
+            Console.WriteLine("Выберите ваш отдел:\n\tF1 - Коммерческий\n\tF2 - Рекламный\n\tF3 - Технический\n\tF4 - Финансовый\n\tF5 - Юридический");
+            Console.WriteLine("\nНажмите кнопку вашего отдела: ");
+            while (true)
+            {
+                depart = Console.ReadKey(true);
+                if ((depart.Key == ConsoleKey.F1) || (depart.Key == ConsoleKey.F2) || (depart.Key == ConsoleKey.F3) || (depart.Key == ConsoleKey.F4) || (depart.Key == ConsoleKey.F5))
+                {
+                    if (depart.Key == ConsoleKey.F1)
+                    {
+                        NameDepartament = "Коммерческий";
+                        KolvoSotrudnikov = 25;
+                        break;
+                    }
+
+                    if (depart.Key == ConsoleKey.F2)
+                    {
+                        NameDepartament = "Рекламный";
+                        KolvoSotrudnikov = 16;
+                        break;
+                    }
+
+                    if (depart.Key == ConsoleKey.F3)
+                    {
+                        NameDepartament = "Технический";
+                        KolvoSotrudnikov = 18;
+                        break;
+                    }
+
+                    if (depart.Key == ConsoleKey.F4)
+                    {
+                        NameDepartament = "Финансовый";
+                        KolvoSotrudnikov = 30;
+                        break;
+                    }
+
+                    if (depart.Key == ConsoleKey.F5)
+                    {
+                        NameDepartament = "Юридический";
+                        KolvoSotrudnikov = 27;
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Неверная кнопка, посмотрите информацию о доступных кнопках!\n");
+                }
+            }
+            Console.WriteLine("Отдел - " + NameDepartament + ", Количество сотрудников - " + KolvoSotrudnikov);
+        }
+            
+    }
+
+    class TypesOfExpenses//Класс видов расходов
+    {
+        public string NameExpenses;//Название расходов
+        public string Description;//Описание
+        public double PredelNorma;//Предельная норма    
+
+        public void TOExp()//определение вида расходов
+        {
+            ConsoleKeyInfo typeexp;//переменная для выбора вида расходов
+            Console.WriteLine("\nВыберите вид расходов:\n\tF1 - Канцелярия\n\tF2 - Ремонт офисной техники\n\tF3 - Сеть\n\tF4 - Мебель\n\tF5 - Удобства сотрудников");
+            Console.WriteLine("\nНажмите кнопку вида расходов: ");
+            while (true)
+            {
+                typeexp = Console.ReadKey(true);
+                if ((typeexp.Key == ConsoleKey.F1) || (typeexp.Key == ConsoleKey.F2) || (typeexp.Key == ConsoleKey.F3) || (typeexp.Key == ConsoleKey.F4) || (typeexp.Key == ConsoleKey.F5))
+                {
+                    if (typeexp.Key == ConsoleKey.F1)
+                    {
+                        NameExpenses = "Канцелярия";
+                        Description = "Расходы на канцтовары(бумага, ручки, карандаши, клей, степлеры, дыроколы, и т.д.)";
+                        PredelNorma = 0;
+                        break;
+                    }
+
+                    if (typeexp.Key == ConsoleKey.F2)
+                    {
+                        NameExpenses = "Ремонт офисной техники";
+                        Description = "\tРасходы на починку офисной техники(компьютеры, принтеры, ксероксы, факс, \n\t\t\tустройства физобработки документов, телефоны, пылесосы и т.д.)";
+                        PredelNorma = 0;
+                        break;
+                    }
+
+                    if (typeexp.Key == ConsoleKey.F3)
+                    {
+                        NameExpenses = "Сеть";
+                        Description = "Расходы на сеть(оплата хостинга, оплата интернета, покупка новых тарифов, оплата антивируса и т.д.)";
+                        PredelNorma = 0;
+                        break;
+                    }
+
+                    if (typeexp.Key == ConsoleKey.F4)
+                    {
+                        NameExpenses = "Мебель";
+                        Description = "Расходы на мебель(покупка новой мебели, ремонт мебели)";
+                        PredelNorma = 0;
+                        break;
+                    }
+
+                    if (typeexp.Key == ConsoleKey.F5)
+                    {
+                        NameExpenses = "Удобства сотрудников";
+                        Description = "Расходы на удобства сотрудников(покупка кондиционеров, кулеров, бутилированной воды, кофемашин, электрочайников и т.д.)";
+                        PredelNorma = 0;
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Неверная кнопка, посмотрите информацию о доступных кнопках!\n");
+                }
+            }
+            Console.WriteLine("\tВид расходов - " + NameExpenses + "\n\tОписание: " + Description + "\n\tПредельная норма расходов - " + PredelNorma);
+        }
+    }
+ 
+
+    class Expenses//Класс расходов
+    {
+        public string TypeExp;//Вид расходов
+        public string Depart;//Отдел
+        public double Summa;//Сумма
+        public string Date;//Дата    
+
+        public void Expens(string NameDepartament, string NameExpenses, double PredelNorma)
+        {
+            Console.WriteLine();
+        }
+    }
+
+    class Program
+    {
+        static void Info()
+        {
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------------------------------------------");
+            Console.WriteLine("|\t\t\tУЧЕТ ВНУТРИОФИСНЫХ РАСХОДОВ\t\t\t\t|");
+            Console.WriteLine("| Действия:\t\t\t\t\t\t\t\t\t|");
+            Console.WriteLine("|\tНажмите 'F1', чтобы закрыть программу\t\t\t\t\t|");
+            Console.WriteLine("|\tНажмите 'F2', если хотите очистить консоль\t\t\t\t|");
+            Console.WriteLine("|\tНажмите 'F3', если хотите посмотреть информацию\t\t\t\t|");
+            Console.WriteLine("|\tНажмите 'F4', если хотите что-то купить\t\t\t\t\t|");
+            Console.WriteLine("|\tНажмите 'F5', если хотите посмотреть информацию о всех расходах\t\t|");
+            Console.WriteLine("---------------------------------------------------------------------------------");
+        }
+
+        static void Buy()//метод для покупки
+        {
+            Departaments dep = new Departaments();
+            TypesOfExpenses toexpen = new TypesOfExpenses();
+            Expenses expen = new Expenses();
+
+            Console.WriteLine("купить");
+            dep.NDep();
+            toexpen.TOExp();
+            expen.Expens(dep.NameDepartament, toexpen.NameExpenses, toexpen.PredelNorma);
+        }
+
+        static void Show()//Метод для вывода расходов
+        {
+            string ras;
+            FileStream file1 = new FileStream("E:\\Практика 02022023\\Программа\\Данные для программы\\Общие Расходы.txt", FileMode.Open); //создаем файловый поток
+            StreamReader reader = new StreamReader(file1); // создаем «потоковый читатель» и связываем его с файловым потоком
+
+            ras = reader.ReadToEnd(); //считываем все данные с потока и выводим на экран
+            reader.Close(); //закрываем поток
+            Console.WriteLine("Внутриофисные расходы составляют: " + ras);
+        }
+
+        static void Main()
+        {
+            ConsoleKeyInfo action;//Действие на нажатие клавиши
+            Info();
+            while (true)
+            {
+                Console.Write("\nВвод действия: ");
+                action = Console.ReadKey(true);
+
+                if ((action.Key == ConsoleKey.F1) || (action.Key == ConsoleKey.F2) || (action.Key == ConsoleKey.F3) || (action.Key == ConsoleKey.F4) || (action.Key == ConsoleKey.F5))
+                {
+                    if (action.Key == ConsoleKey.F1) break;
+
+                    if (action.Key == ConsoleKey.F2)
+                    {
+                        Console.Clear();
+                        Info();
+                        Console.WriteLine("\nКонсоль очищена!");
+                    }
+
+                    if (action.Key == ConsoleKey.F3) Info();
+
+                    if (action.Key == ConsoleKey.F4) Buy();
+
+                    if (action.Key == ConsoleKey.F5) Show();
+                }
+                else
+                {
+                    Console.WriteLine("Неверная кнопка, посмотрите информацию о доступных кнопках!");
+                }
+            }
+        }
+    }
+    
+ }
